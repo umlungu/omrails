@@ -1,20 +1,23 @@
-<div class="hero-unit">
-	<div class="row">
-	  <div class="span8">
-	  	<h1>Welcome friend</h1>
-		<p>
-			You've found the home page for 
-			<%= link_to "Felix Nortons", "http://facebook.com/felixfenixumlungu" %>
-			first application.
-		</p>
-		<p>
-			<%= link_to "Clicky!", "#", class: "btn btn-primary btn-large" %>
-		</p>
+<% if user_signed_in? %>
+	<h1>You've logged in, big whoop :D</h1>
+<% else %>	
+	<div class="hero-unit">
+		<div class="row">
+		  <div class="span8">
+		  	<h1>Welcome friend</h1>
+			<p>
+				You've found the home page for 
+				<%= link_to "Felix Nortons", "http://facebook.com/felixfenixumlungu" %>
+				first application.
+			</p>
+			<p>
+				<%= link_to "Clicky!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+			</p>
 
-	  </div>
+		  </div>
+		</div>
 	</div>
-</div>
-
+<% end %>
 
 
 
